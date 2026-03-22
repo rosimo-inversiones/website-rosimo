@@ -102,8 +102,7 @@ export default function Footer() {
         {/* LÍNEA FINAL DE VERIFICACIÓN */}
         <div className="pt-10 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
           <p className="text-[9px] font-mono uppercase tracking-[0.2em] md:tracking-[0.4em] text-slate-600">
-            © {anioActual} ROSIMO_PRECISION_ENGINEERING //
-            ALL_SYSTEMS_OPERATIONAL
+            © {anioActual} ROSIMO_Concessionaire
           </p>
 
           {/* Navegación legal y System Check */}
@@ -122,7 +121,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 bg-red-600 rounded-full animate-pulse" />
               <span className="text-[9px] font-black uppercase tracking-widest text-white italic">
-                Verified by RosimoMatrix_OS
+                Verified by GSM
               </span>
             </div>
           </div>

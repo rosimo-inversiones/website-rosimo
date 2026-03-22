@@ -9,34 +9,34 @@ const BRANDS_DATA = [
     nombre: "Can-Am",
     ref: "RO-BRAND-01",
     img: "https://images.unsplash.com/photo-1531327431456-837da4b1d562?q=80&w=800",
-    link: "/catalogo?marca=can-am",
+    link: "/catalogo/motos?marca=Can-Am",
     size: "large",
     desc: "Ingeniería de vanguardia dominando las rutas On y Off-Road.",
   },
   {
-    id: "ryker",
-    nombre: "Ryker",
+    id: "Honda",
+    nombre: "Honda",
     ref: "RO-BRAND-02",
     img: "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?q=80&w=800",
-    link: "/catalogo?marca=ryker",
+    link: "/catalogo/motos?marca=Honda",
     size: "small",
     desc: "Estilo urbano. Agarre perfecto en curvas cerradas.",
   },
   {
-    id: "spyder",
-    nombre: "Spyder",
+    id: "Yamaha",
+    nombre: "Yamaha",
     ref: "RO-BRAND-03",
     img: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=800",
-    link: "/catalogo?marca=spyder",
+    link: "/catalogo/motos?marca=Yamaha",
     size: "small",
     desc: "El pináculo del Touring deportivo de tres ejes.",
   },
   {
-    id: "sea-doo",
-    nombre: "Sea-Doo",
+    id: "Kawasaki",
+    nombre: "Kawasaki",
     ref: "RO-BRAND-04",
     img: "https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?q=80&w=800",
-    link: "/catalogo?marca=sea-doo",
+    link: "/catalogo/motos?marca=Kawasaki",
     size: "medium",
     desc: "Aceleración marina y control aerodinámico sobre el agua.",
   },
@@ -92,7 +92,7 @@ export default function BrandsBentoGrid() {
             viewport={{ once: false }}
             className="text-red-600 font-mono text-[10px] uppercase tracking-[0.5em] mb-4 block"
           >
-            Partner_Network // Escuderías_Asociadas
+            Partner_Network // Marcas_Asociadas
           </motion.span>
           <motion.h2
             initial={{ y: 20, opacity: 0 }}

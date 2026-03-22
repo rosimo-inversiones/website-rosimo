@@ -103,7 +103,7 @@ export default function CatalogoLobbyPage() {
         {/* GRID CENTRADO QUE OCUPA EL ALTO DISPONIBLE (flex-1) */}
         {/* lg:pr-28 evita que el botón de WhatsApp tape la tercera tarjeta en pantallas grandes */}
         <motion.div
-          className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 lg:pr-28 justify-center min-h-[400px]"
+          className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 lg:pr-28 justify-center min-h-100"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -117,7 +117,7 @@ export default function CatalogoLobbyPage() {
             >
               <Link
                 href={cat.link}
-                className="block relative w-full h-[400px] md:h-full rounded-[2.5rem] overflow-hidden border border-slate-200 bg-slate-950 shadow-xl transition-all duration-700 hover:border-red-600/50 hover:shadow-2xl hover:-translate-y-2"
+                className="block relative w-full h-100 md:h-full rounded-[2.5rem] overflow-hidden border border-slate-200 bg-slate-950 shadow-xl transition-all duration-700 hover:border-red-600/50 hover:shadow-2xl hover:-translate-y-2"
               >
                 {/* Imagen Oscurecida para Contraste */}
                 <div className="absolute inset-0 z-0">
@@ -126,7 +126,7 @@ export default function CatalogoLobbyPage() {
                     alt={cat.titulo}
                     className="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-30 transition-all duration-1000"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90" />
                 </div>
 
                 {/* Marcadores Centrados Superiores */}
@@ -142,7 +142,7 @@ export default function CatalogoLobbyPage() {
                   <h2 className="text-4xl md:text-5xl font-black uppercase italic text-white mb-3 tracking-tighter group-hover:text-red-600 transition-colors">
                     {cat.titulo}
                   </h2>
-                  <p className="text-slate-400 text-xs md:text-sm font-medium leading-relaxed italic opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 max-w-[220px]">
+                  <p className="text-slate-400 text-xs md:text-sm font-medium leading-relaxed italic opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 max-w-55">
                     "{cat.desc}"
                   </p>
                 </div>

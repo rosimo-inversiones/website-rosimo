@@ -8,21 +8,21 @@ const SLIDES_DATA = [
     titulo: "CAN-AM <span class='text-slate-400'>RYKER</span>",
     desc: "Dominio absoluto en asfalto y ciudad.",
     img: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=1600",
-    link: "/catalogo/ryker",
+    link: "/vehiculo/can-am-ryker",
     ref: "RO-SLIDE-01",
   },
   {
     titulo: "SPYDER <span class='text-slate-400'>F3-S</span>",
     desc: "Estabilidad y confort en tres ruedas.",
     img: "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?q=80&w=1600",
-    link: "/catalogo/spyder-f3s",
+    link: "/vehiculo/spyder-f3-s",
     ref: "RO-SLIDE-02",
   },
   {
     titulo: "SPYDER <span class='text-slate-400'>RT</span>",
     desc: "Poder off-road sin límites.",
     img: "https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?q=80&w=1600",
-    link: "/catalogo/spyder-rt",
+    link: "/vehiculo/spyder-rt",
     ref: "RO-SLIDE-03",
   },
 ];
@@ -104,7 +104,7 @@ export default function HomeHeroCarouselRosimo() {
       <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col py-8 lg:py-12 relative z-10">
         <div className="text-center pt-20 md:pt-24 mb-6">
           <span className="text-red-600 font-mono text-[10px] uppercase tracking-[0.4em] mb-2 block">
-            Rosimo_OS // Distributor
+            Rosimo_OS // Concessionaire
           </span>
           <h1 className="text-4xl md:text-7xl font-black uppercase italic tracking-tighter text-slate-950 leading-none">
             Selecciona tu <span className="text-slate-400">Máquina</span>
@@ -192,7 +192,7 @@ export default function HomeHeroCarouselRosimo() {
             ))}
           </div>
           <p className="hidden md:block text-[8px] font-mono uppercase tracking-[0.3em] text-slate-400">
-            Rosimo_Authorized_Distributor // 2026
+            Rosimo_Authorized_Concessionaire // 2026
           </p>
         </div>
       </div>

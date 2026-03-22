@@ -118,7 +118,7 @@ export default function MotoStyles() {
               className="group flex justify-center"
             >
               <Link
-                href={`/catalogo/${estilo.id}`}
+                href={`/catalogo/motos?subtipo=${estilo.id}`}
                 className="block relative w-full h-[450px] rounded-[2.5rem] overflow-hidden border border-slate-200 bg-slate-950 shadow-lg transition-all duration-700 hover:border-red-600/50 hover:-translate-y-2"
               >
                 {/* Imagen */}

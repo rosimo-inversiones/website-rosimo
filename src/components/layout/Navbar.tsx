@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
 const NAV_LINKS = [
-  { name: "Inicio", path: "/", ref: "RO-NAV-01" },
+  // { name: "Inicio", path: "/", ref: "RO-NAV-01" },
   { name: "Motos", path: "/catalogo/motos", isPrimary: true, ref: "RO-NAV-02" },
   { name: "Trimotos", path: "/catalogo/trimotos", ref: "RO-NAV-03" },
   { name: "Cuatrimotos", path: "/catalogo/cuatrimotos", ref: "RO-NAV-04" },
@@ -47,7 +47,7 @@ export default function NavbarDark() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-[100] flex justify-center py-4 md:py-6 px-4 pointer-events-none">
+      <div className="fixed top-0 left-0 right-0 z-100 flex justify-center py-4 md:py-6 px-4 pointer-events-none">
         <header
           className={`w-full max-w-7xl pointer-events-auto transition-all duration-500 rounded-full border px-6 md:px-10 py-3 flex items-center justify-between shadow-2xl
             ${
@@ -58,13 +58,14 @@ export default function NavbarDark() {
           `}
         >
           {/* LOGO ROSIMO DARK */}
-          <Link href="/" className="relative z-[110] group">
+          <Link
+            href="/"
+            className="relative z-110 group"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <h1 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-white">
               ROSIMO <span className="text-red-600 italic">MOTOS</span>
             </h1>
-            {/* <span className="hidden md:block font-mono text-[8px] text-slate-500 absolute -bottom-3 left-0 tracking-[0.3em] opacity-50">
-              TACTICAL_INTERFACE_V1.1
-            </span> */}
           </Link>
 
           {/* NAVEGACIÓN DESKTOP DARK */}
@@ -75,6 +76,9 @@ export default function NavbarDark() {
                 <Link
                   key={link.name}
                   href={link.path}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
                   className={`relative px-5 py-2 text-[10px] font-black uppercase tracking-[0.2em] transition-all rounded-full overflow-hidden
                     ${isActive ? "text-slate-950" : link.isPrimary ? "text-red-500" : "text-slate-400 hover:text-white"}
                     ${link.isAction ? "ml-4 bg-red-600 text-white hover:bg-white hover:text-slate-950 shadow-lg shadow-red-600/20" : ""}
@@ -100,7 +104,7 @@ export default function NavbarDark() {
           {/* MENÚ HAMBURGUESA DARK */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative z-[110] w-12 h-12 flex flex-col items-center justify-center gap-1.5 bg-white/10 rounded-full border border-white/10"
+            className="lg:hidden relative z-110 w-12 h-12 flex flex-col items-center justify-center gap-1.5 bg-white/10 rounded-full border border-white/10"
           >
             <motion.span
               animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
@@ -125,7 +129,7 @@ export default function NavbarDark() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-slate-950 z-[90] flex flex-col pt-40 px-10 lg:hidden"
+            className="fixed inset-0 bg-slate-950 z-90 flex flex-col pt-40 px-10 lg:hidden"
           >
             <div
               className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -143,6 +147,10 @@ export default function NavbarDark() {
                 >
                   <Link
                     href={link.path}
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                     className={`flex items-baseline gap-4 text-4xl font-black uppercase italic tracking-tighter ${pathname === link.path ? "text-red-600" : "text-white"}`}
                   >
                     <span className="font-mono text-[10px] text-slate-600">
