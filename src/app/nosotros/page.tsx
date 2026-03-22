@@ -44,7 +44,7 @@ export default function NosotrosCentrado() {
           className="mb-20"
         >
           <span className="text-red-600 font-mono text-[10px] uppercase tracking-[0.5em] mb-4 block">
-            Corporate_Identity // Rosimo_OS v1.1
+            Concessionaire_Identity // Rosimo_OS
           </span>
           <h1 className="text-5xl md:text-8xl font-black uppercase italic tracking-tighter text-slate-950 leading-none mb-8">
             Nuestra <span className="text-slate-400">Historia</span>
@@ -109,7 +109,7 @@ export default function NosotrosCentrado() {
           className="mb-16 text-center relative z-10"
         >
           <span className="text-red-600 font-mono text-[10px] uppercase tracking-[0.5em] mb-10 block">
-            Experience the Matrix // Protocol_Activate
+            Experience // Activate
           </span>
 
           {/* Tarjeta de Ingeniería Única (Estilo Rosimo) */}
@@ -147,7 +147,7 @@ export default function NosotrosCentrado() {
         {/* PIE TÉCNICO DE SECCIÓN */}
         <div className="mt-20 opacity-30 relative z-10">
           <p className="text-[9px] font-mono uppercase tracking-[0.3em] text-slate-500">
-            About_Verified // Rosimo_Engineering // 2026
+            About_Verified // Rosimo_Concessionaire // 2026
           </p>
         </div>
       </div>

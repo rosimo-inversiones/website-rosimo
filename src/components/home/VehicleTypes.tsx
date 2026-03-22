@@ -77,7 +77,7 @@ export default function VehicleTypes() {
             viewport={{ once: false }} // Animación constante
             className="text-red-600 font-mono text-[10px] uppercase tracking-[0.5em] mb-4 block"
           >
-            Categorías_de_Pilotaje // Rosimo_OS
+            Categorías // Rosimo_OS
           </motion.span>
           <motion.h2
             initial={{ y: 20, opacity: 0 }}
