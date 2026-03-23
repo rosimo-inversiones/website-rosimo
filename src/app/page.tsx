@@ -6,12 +6,14 @@ import ImmersiveSection from "@/components/home/ImmersiveSection";
 import BrandsBentoGrid from "@/components/home/BrandsBentoGrid";
 import HomeLocationQuickView from "@/components/home/HomeLocationQuickView";
 import HomeRoutes from "@/components/home/HomeRoutes";
+import HeroCarousel02 from "@/components/home/HeroCarousel02";
 
 export default function HomePage() {
   return (
     <div className="bg-white overflow-hidden">
       {/* 1. Impacto visual interactivo inicial (Core Business: Motos focus) */}
       <HeroCarousel />
+      {/* <HeroCarousel02 /> */}
 
       {/* <HomeLocationQuickView /> */}
 

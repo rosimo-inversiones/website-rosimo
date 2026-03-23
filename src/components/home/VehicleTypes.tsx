@@ -6,7 +6,7 @@ import Link from "next/link";
 const TYPES_DATA = [
   {
     id: "motos",
-    titulo: "Dos Ruedas",
+    titulo: "Motos",
     ref: "RO-CHASIS-01",
     desc: "Agilidad urbana y entrega de torque instantáneo para dominar el asfalto.",
     img: "https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?q=80&w=800",
@@ -14,20 +14,20 @@ const TYPES_DATA = [
   },
   {
     id: "trimotos",
-    titulo: "Trimóviles",
+    titulo: "Trimotos",
     ref: "RO-CHASIS-02",
     desc: "Estabilidad de tres puntos de apoyo con aerodinámica deportiva.",
-    img: "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?q=80&w=800",
+    img: "/img/furgon.webp",
     link: "/catalogo/trimotos",
   },
-  {
-    id: "cuatrimotos",
-    titulo: "Off-Road 4x4",
-    ref: "RO-CHASIS-03",
-    desc: "Tracción total independiente para conquistar las rutas más hostiles.",
-    img: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=800",
-    link: "/catalogo/cuatrimotos",
-  },
+  // {
+  //   id: "cuatrimotos",
+  //   titulo: "Off-Road 4x4",
+  //   ref: "RO-CHASIS-03",
+  //   desc: "Tracción total independiente para conquistar las rutas más hostiles.",
+  //   img: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=800",
+  //   link: "/catalogo/cuatrimotos",
+  // },
 ];
 
 export default function VehicleTypes() {
@@ -98,7 +98,7 @@ export default function VehicleTypes() {
         {/* GRID TÉCNICO CENTRADO */}
         {/* Usamos mx-auto y padding balanceado para centrado perfecto, manteniendo espacio para WhatsApp (pb-12) */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center pb-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center pb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -112,7 +112,7 @@ export default function VehicleTypes() {
             >
               <Link
                 href={type.link}
-                className="block relative w-full h-[450px] md:h-[500px] rounded-[2.5rem] overflow-hidden border border-white/5 bg-slate-900 transition-all duration-700 hover:border-red-600/50 shadow-2xl hover:-translate-y-2"
+                className="block relative w-full h-112.5 md:h-125 rounded-[2.5rem] overflow-hidden border border-white/5 bg-slate-900 transition-all duration-700 hover:border-red-600/50 shadow-2xl hover:-translate-y-2"
               >
                 {/* Imagen con Overlay */}
                 <div className="absolute inset-0 z-0">
@@ -121,7 +121,7 @@ export default function VehicleTypes() {
                     alt={type.titulo}
                     className="w-full h-full object-cover opacity-50 group-hover:scale-110 group-hover:opacity-30 transition-all duration-1000"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 </div>
 
                 {/* Marcadores Centrados */}
@@ -137,7 +137,7 @@ export default function VehicleTypes() {
                   <h3 className="text-3xl md:text-4xl font-black uppercase italic text-white mb-3 tracking-tighter group-hover:text-red-600 transition-colors">
                     {type.titulo}
                   </h3>
-                  <p className="text-slate-400 text-xs font-medium italic leading-relaxed opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 max-w-[220px]">
+                  <p className="text-slate-400 text-xs font-medium italic leading-relaxed opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 max-w-55">
                     "{type.desc}"
                   </p>
                 </div>

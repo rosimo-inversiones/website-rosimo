@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image"; // IMPORTACIÓN TÁCTICA PARA EL LOGO
 
 export default function Footer() {
   const anioActual = new Date().getFullYear();
@@ -18,13 +19,24 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-center md:text-left">
           {/* COLUMNA 1: BRANDING TÁCTICO */}
           <div className="flex flex-col items-center md:items-start space-y-6">
-            <Link
+            {/* <Link
               href="/"
               className="text-3xl font-black text-white tracking-tighter block uppercase italic"
             >
               ROSIMO<span className="text-red-600">MOTOS</span>
+            </Link> */}
+
+            <Link href="/" className="flex items-center gap-2 group">
+              <Image
+                src="/img/logo-dark.png" // Reemplazar con tu archivo real
+                alt="Rosimo Logo"
+                width={200} // Tamaño táctico
+                height={100}
+                className="h-25 w-auto transition-transform brightness(0)" // Brillo cero para negro
+              />
             </Link>
-            <p className="text-slate-500 text-xs leading-relaxed italic max-w-[250px]">
+
+            <p className="text-slate-500 text-xs leading-relaxed italic max-w-62.5">
               "Domina el asfalto y la tierra con la ingeniería más avanzada.
               Líderes en vehículos de alto rendimiento desde 2010."
             </p>
@@ -98,7 +110,7 @@ export default function Footer() {
                 📍 Jr. 3 de Octubre, PUCALLPA - UCAYALI
               </p>
               <p className="text-[11px] font-mono text-slate-300">
-                📞 +51 900 000 000
+                📞 +51 938 831 988
               </p>
 
               <div className="flex justify-center md:justify-start gap-4 pt-4">

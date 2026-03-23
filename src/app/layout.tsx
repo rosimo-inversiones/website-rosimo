@@ -3,9 +3,8 @@ import "./globals.css";
 import Footer from "../components/layout/Footer";
 import WhatsAppFloating from "@/components/ui/WhatsAppFloating";
 import Navbar from "@/components/layout/Navbar";
-import FloatingActions from "@/components/ui/FloatingActions";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Rosimo | Concesionaria Premium en Pucallpa",
   description:
     "Venta de cuatrimotos, trimotos y motocicletas de alta gama en Ucayali. Sede Central en Pucallpa con envíos certificados.",
