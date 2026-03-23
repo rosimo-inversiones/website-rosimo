@@ -7,6 +7,7 @@ import VehicleFAQ from "@/components/vehicle/VehicleFAQ";
 import VehicleFeatures from "@/components/vehicle/VehicleFeatures";
 import VehicleGallery from "@/components/vehicle/VehicleGallery";
 import FinanceSimulator from "@/components/vehicle/FinanceSimulator";
+import VehicleScrollSpy from "@/components/ui/VehicleScrollSpy"; // IMPORTAMOS EL RADAR
 
 // 1. Generar los parámetros estáticos (SEO y Velocidad)
 export async function generateStaticParams() {
@@ -21,7 +22,7 @@ export default async function VehiculoDetalle({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params; // En Next.js 16+, params es una Promise
+  const { slug } = await params;
 
   const vehiculo = VEHICULOS.find((v) => v.slug === slug);
 
@@ -30,13 +31,33 @@ export default async function VehiculoDetalle({
   }
 
   return (
-    <article className="bg-white">
-      <VehicleHero vehiculo={vehiculo} />
-      <VehicleSpecs vehiculo={vehiculo} />
-      <VehicleGallery vehiculo={vehiculo} />
-      <FinanceSimulator vehiculo={vehiculo} />
-      <VehicleFeatures />
-      <VehicleFAQ vehiculo={vehiculo} />
+    <article className="bg-white relative">
+      {/* INYECTAMOS EL RADAR FLOTANTE */}
+      <VehicleScrollSpy />
+
+      {/* ENVOLVEMOS CADA COMPONENTE EN UN SECTION CON SU ID TÁCTICO */}
+      <section id="hero">
+        <VehicleHero vehiculo={vehiculo} />
+      </section>
+
+      <section id="specs">
+        <VehicleSpecs vehiculo={vehiculo} />
+      </section>
+
+      <section id="gallery">
+        <VehicleGallery vehiculo={vehiculo} />
+      </section>
+
+      <section id="finance">
+        <FinanceSimulator vehiculo={vehiculo} />
+      </section>
+
+      <section id="faq">
+        <VehicleFeatures />
+        <VehicleFAQ vehiculo={vehiculo} />
+      </section>
+
+      {/* El CTA lo dejamos fuera del radar, es el cierre natural */}
       <VehicleCTA vehiculo={vehiculo} />
     </article>
   );

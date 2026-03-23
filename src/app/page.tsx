@@ -4,12 +4,16 @@ import MotoStyles from "@/components/home/MotoStyles";
 import FeaturedVehicles from "@/components/home/FeaturedVehicles";
 import ImmersiveSection from "@/components/home/ImmersiveSection";
 import BrandsBentoGrid from "@/components/home/BrandsBentoGrid";
+import HomeLocationQuickView from "@/components/home/HomeLocationQuickView";
+import HomeRoutes from "@/components/home/HomeRoutes";
 
 export default function HomePage() {
   return (
     <div className="bg-white overflow-hidden">
       {/* 1. Impacto visual interactivo inicial (Core Business: Motos focus) */}
       <HeroCarousel />
+
+      {/* <HomeLocationQuickView /> */}
 
       {/* 2. Jerarquía de líneas de negocio (Bento Grid) */}
       <VehicleTypes />
@@ -19,6 +23,8 @@ export default function HomePage() {
 
       {/* 4. Profesionalismo y Alianzas (Marcas) */}
       <BrandsBentoGrid />
+
+      <HomeRoutes />
 
       {/* 5. Modelos estrella (Mezcla de Core y Secundarios) */}
       <FeaturedVehicles />
