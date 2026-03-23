@@ -53,23 +53,32 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* COLUMNA 3: SUPPORT DATABASE */}
+          {/* COLUMNA 3: SUPPORT DATABASE ACTUALIZADA */}
           <div className="flex flex-col items-center md:items-start space-y-6">
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-600">
               Support_Database
             </h4>
             <nav className="flex flex-col gap-4 text-xs font-bold uppercase tracking-widest text-slate-400">
               <Link
-                href="/contacto"
-                className="hover:text-red-600 transition-colors"
+                href="/soporte"
+                className="hover:text-red-600 transition-colors flex items-center gap-2 group"
               >
-                Agendar Mantenimiento
+                <span className="hidden md:block w-0 h-px bg-red-600 group-hover:w-4 transition-all" />
+                Base de Conocimiento
               </Link>
-              <Link href="#" className="hover:text-red-600 transition-colors">
-                Garantía Extendida
+              <Link
+                href="/soporte/limpieza-cadena-lodo-extremo"
+                className="hover:text-red-600 transition-colors flex items-center gap-2 group"
+              >
+                <span className="hidden md:block w-0 h-px bg-red-600 group-hover:w-4 transition-all" />
+                Protocolos de Selva
               </Link>
-              <Link href="#" className="hover:text-red-600 transition-colors">
-                FAQs
+              <Link
+                href="/contacto"
+                className="hover:text-red-600 transition-colors flex items-center gap-2 group"
+              >
+                <span className="hidden md:block w-0 h-px bg-red-600 group-hover:w-4 transition-all" />
+                Agendar Taller
               </Link>
             </nav>
           </div>

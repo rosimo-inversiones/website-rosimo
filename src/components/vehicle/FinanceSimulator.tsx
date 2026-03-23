@@ -2,6 +2,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, Variants } from "framer-motion";
 import { Vehiculo } from "@/types";
+import Link from "next/link";
 
 export default function FinanceSimulatorRosimoDarkCard({
   vehiculo,
@@ -25,6 +26,18 @@ export default function FinanceSimulatorRosimoDarkCard({
       (Math.pow(1 + tasaMensual, meses) - 1);
     return { inicial, cuotaMensual, montoPrestar };
   }, [vehiculo.precio, cuotaInicialPct, meses]);
+
+  const handleSolicitudTactica = () => {
+    // Construimos los parámetros para que el Wizard los reciba
+    const params = new URLSearchParams({
+      moto: vehiculo.slug || "",
+      inicial: calculos.inicial.toString(),
+      meses: meses.toString(),
+      cuota: Math.round(calculos.cuotaMensual).toString(),
+    });
+
+    window.location.href = `/financiamiento?${params.toString()}`;
+  };
 
   if (!mounted) return null;
 
@@ -122,14 +135,15 @@ export default function FinanceSimulatorRosimoDarkCard({
                 </div>
               </div>
 
-              <button
-                onClick={() =>
-                  window.open(`https://wa.me/51900000000`, "_blank")
-                }
-                className="w-full py-6 bg-white text-slate-950 rounded-xl font-black uppercase text-[10px] tracking-[0.2em] hover:bg-red-600 hover:text-white transition-all duration-500 shadow-xl"
-              >
-                Iniciar Solicitud Rosimo_OS
-              </button>
+              {/* BOTÓN TÁCTICO DE REDIRECCIÓN */}
+              <div className="mt-8 relative z-10">
+                <button
+                  onClick={handleSolicitudTactica}
+                  className="w-full py-6 bg-white text-slate-950 rounded-xl font-black uppercase text-[10px] tracking-[0.2em] hover:bg-red-600 hover:text-white transition-all duration-500 shadow-xl"
+                >
+                  Iniciar Solicitud Rosimo_OS ↓
+                </button>
+              </div>
             </div>
           </div>
         </div>
