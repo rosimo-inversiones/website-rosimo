@@ -74,14 +74,19 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* COLUMNA 4: ACTIVE SIGNAL (Ubicación) */}
+          {/* COLUMNA 4: ACTIVE SIGNAL (Ubicación Estratégica) */}
           <div className="flex flex-col items-center md:items-start space-y-6">
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-600">
               Active_Signal
             </h4>
-            <div className="space-y-4 text-center md:text-left">
+            <div className="space-y-3 text-center md:text-left">
+              {/* Etiqueta Táctica de Sede Central */}
+              <span className="bg-white/10 text-white px-3 py-1.5 rounded-md text-[8px] font-mono uppercase tracking-[0.2em] inline-block mb-1 border border-white/5">
+                RO-HQ-01 // Sede Central
+              </span>
+
               <p className="text-[11px] font-mono text-slate-300">
-                📍 AV. REVOLUCIÓN 456, LIMA - PERÚ
+                📍 Jr. 3 de Octubre, PUCALLPA - UCAYALI
               </p>
               <p className="text-[11px] font-mono text-slate-300">
                 📞 +51 900 000 000
