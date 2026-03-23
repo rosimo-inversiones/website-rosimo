@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Image from "next/image";
 
 const NAV_LINKS = [
   {
@@ -11,11 +12,11 @@ const NAV_LINKS = [
     subLinks: [
       { name: "Motos", path: "/catalogo/motos", desc: "Rendimiento asfalto" },
       { name: "Trimotos", path: "/catalogo/trimotos", desc: "Carga pesada" },
-      {
-        name: "Cuatrimotos",
-        path: "/catalogo/cuatrimotos",
-        desc: "Off-Road táctico",
-      },
+      // {
+      //   name: "Cuatrimotos",
+      //   path: "/catalogo/cuatrimotos",
+      //   desc: "Off-Road táctico",
+      // },
     ],
   },
   { name: "Soporte", path: "/soporte", ref: "RO-SUP-02" },
@@ -72,21 +73,40 @@ export default function NavbarDark() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-[100] flex justify-center py-4 md:py-6 px-4 pointer-events-none">
+      {/* CONTENEDOR EXTERIOR: Controla el padding en Desktop vs Mobile/Scroll */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-100 flex justify-center pointer-events-none transition-all duration-500 ease-[0.16,1,0.3,1] 
+          ${scrolled ? "p-0" : "p-0 lg:py-6 lg:px-4"}
+        `}
+      >
         <header
-          className={`w-full max-w-7xl pointer-events-auto transition-all duration-500 rounded-full border px-6 md:px-8 py-3 flex items-center justify-between shadow-2xl
-            ${scrolled ? "bg-slate-950/90 backdrop-blur-xl border-white/10" : "bg-slate-950 border-white/5"}
+          className={`w-full pointer-events-auto transition-all duration-500 ease-[0.16,1,0.3,1] flex items-center justify-between shadow-2xl
+            ${
+              scrolled
+                ? "max-w-full rounded-none bg-slate-950/90 backdrop-blur-xl border-b border-white/10 px-6 md:px-12 py-3 md:py-4"
+                : "max-w-full lg:max-w-7xl rounded-none lg:rounded-full bg-slate-950 border-b border-white/5 lg:border lg:border-white/10 px-6 md:px-8 py-3 lg:py-3"
+            }
           `}
         >
-          {/* LOGO ROSIMO DARK */}
+          {/* LOGO TÁCTICO ROSIMO ACTUALLIZADO (Inspirado en image_8.png) */}
           <Link
             href="/"
-            className="relative z-[110] group"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="relative z-110 flex items-center gap-2 group pointer-events-auto"
           >
-            <h1 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-white">
-              ROSIMO <span className="text-red-600 italic">MOTOS</span>
+            {/* Texto ROSIMO: Rojo Carmesí Carmesí Carmesí Carmesí Metálico con Efecto 3D */}
+            <h1
+              className="text-xl md:text-2xl font-black uppercase italic tracking-tighter text-red-600 transition-all duration-300 group-hover:text-red-500 group-hover:scale-110 group-hover:animate-pulse"
+              style={{
+                textShadow: "1px 1px 0px #4a0404, 2px 2px 0px #020617", // Sombra Táctica para Profundidad
+                WebkitTextStroke: "1px rgba(255, 255, 255, 0.1)", // Borde Táctico Sutil
+              }}
+            >
+              ROSIMO
             </h1>
+            {/* El punto indicador interactivo parpadea para indicar pre-clic */}
+            <div className="w-3 h-3 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:animate-ping bg-red-600/10 border border-red-600/30">
+              <div className="w-1.5 h-1.5 rounded-full bg-red-600" />
+            </div>
           </Link>
 
           {/* NAVEGACIÓN DESKTOP DARK */}
@@ -227,7 +247,7 @@ export default function NavbarDark() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-slate-950 z-[90] flex flex-col pt-32 px-10 overflow-y-auto lg:hidden"
+            className="fixed inset-0 bg-slate-950 z-90 flex flex-col pt-32 px-10 overflow-y-auto lg:hidden"
           >
             <div
               className="absolute inset-0 opacity-[0.03] pointer-events-none"
